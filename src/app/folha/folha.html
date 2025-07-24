@@ -7,12 +7,12 @@
             </div>
             <div class="corpo header">
                 <p>
-                    <span class="negrito mauiscula">LM PALHARES PRESTAÇÃO DE SERVIÇOS</span><br>
-                    Rua do Lagoa, casa nº 35, R/C Bairro Morro Bento<br>
+                    <span class="negrito mauiscula">{{farura().outros_dados.empresa.nome}}</span><br>
+                   {{farura().outros_dados.empresa.endereco_sede}}<br>
                     Luanda<br>
-                    Tel: (244) 923835919<br>
-                    E-mail: lmpalhares2022@outlook.com<br>
-                    Contribuinte: 5000575364 <br>
+                    Tel: (244){{farura().outros_dados.empresa.telefone}}<br>
+                    E-mail:{{farura().outros_dados.empresa.email}}<br>
+                    Contribuinte:{{farura().outros_dados.empresa.nif}} <br>
                 </p>
             </div>
         </div>
@@ -23,7 +23,7 @@
             <div class="corpo-qrcode">
                 <p>
                     Exmo.(s) Sr(s)<br>
-                    <span class="negrito mauiscula">STERLING - WILSON ANGOLA, LDA</span>
+                    <span class="negrito mauiscula">{{farura().outros_dados.cliente.nome}}</span>
 
                     LUANDA - ANGOLA<br>
                     Luanda - Angola<br>
@@ -168,7 +168,7 @@
                 </thead>
                 <tbody>
                     <tr class="borda-inferior">
-                        <td> IBAN AO06 0040 0000 5206 4340 1016 1</td>
+                        <td> {{farura().outros_dados.empresa.iban}}</td>
                     </tr>
                 </tbody>
             </table>
