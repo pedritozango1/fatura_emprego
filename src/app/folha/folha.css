@@ -1,0 +1,138 @@
+* {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        h1 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 10pt;
+        }
+
+        .folha {
+            width: 900px;
+            margin: 20px auto;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+
+        }
+
+        header>div {
+            width: 40%;
+        }
+
+        .logo-header {
+            text-align: center;
+        }
+
+        .tabela-a-conteiner {
+            display: flex;
+            justify-content: space-between;
+            border-top: 4px solid black;
+            padding-top: 10px;
+        }
+
+        .tabela-c-conteiner {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+            border-top: 4px solid black;
+        }
+
+        .pagina {
+            display: flex;
+            justify-content: space-between;
+            margin: 200px 0;
+        }
+
+        .tabela-b-conteiner {
+            border-top: 4px solid black;
+        }
+
+        .direita,
+        .esquerda {
+            width: 40%;
+        }
+
+        .esquerda .tabela,
+        .direita table {
+            width: 100%;
+
+        }
+
+        .esquerda .tabela th {
+            width: 50%;
+        }
+
+        .tabela th {
+            text-align: left;
+            font-weight: normal;
+            padding-right: 30px;
+
+        }
+
+        thead {
+            border-bottom: 1px solid black;
+        }
+
+        .tabela-b-conteiner .tabela {
+            width: 100%;
+        }
+
+        .tabela-b-conteiner .tabela th {
+            width: 16%;
+            padding: 5px;
+        }
+
+        .negrito {
+            font-weight: bold;
+        }
+
+        .mauiscula {
+            text-transform: uppercase;
+        }
+
+        .tabela-c-conteiner .equerda {
+            width: 54%;
+        }
+
+        .tabela-c-conteiner .direita {
+            width: 40%;
+        }
+
+        .tabela-c-conteiner .tabela {
+            width: 100%;
+        }
+
+        .margiana {
+            margin-top: 50px;
+        }
+
+        .borda-reforcada {
+            border-bottom: 4px solid black;
+        }
+
+        .borda-inferior {
+            border-bottom: 1px solid black;
+        }
+
+        .borda {
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        .padding-simples {
+            padding: 10px;
+        }
+
+        .texto-direita {
+            text-align: right;
+        }

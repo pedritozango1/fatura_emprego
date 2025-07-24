@@ -1,0 +1,221 @@
+<div class="folha">
+
+    <header>
+        <div class="aprsentacao">
+            <div class="logo-header">
+                <img src="assets/img/logo.png">
+            </div>
+            <div class="corpo header">
+                <p>
+                    <span class="negrito mauiscula">LM PALHARES PRESTAÇÃO DE SERVIÇOS</span><br>
+                    Rua do Lagoa, casa nº 35, R/C Bairro Morro Bento<br>
+                    Luanda<br>
+                    Tel: (244) 923835919<br>
+                    E-mail: lmpalhares2022@outlook.com<br>
+                    Contribuinte: 5000575364 <br>
+                </p>
+            </div>
+        </div>
+        <div class="qrcode">
+            <div class="qrcode-header">
+                <img src="assets/img/qrcode.png">
+            </div>
+            <div class="corpo-qrcode">
+                <p>
+                    Exmo.(s) Sr(s)<br>
+                    <span class="negrito mauiscula">STERLING - WILSON ANGOLA, LDA</span>
+
+                    LUANDA - ANGOLA<br>
+                    Luanda - Angola<br>
+                </p>
+            </div>
+        </div>
+    </header>
+    <p>original</p>
+    <h1>Factura n.º FT 2025/16 </h1>
+    <div class="tabela-a-conteiner">
+        <div class="esquerda">
+            <table class="tabela">
+                <thead>
+                    <tr class="linh">
+                        <th>Data de emissão</th>
+                        <th>Contribuinte</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{farura().dados.data_vencimento}}
+                        </td>
+                        <td> 5001841270
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Data de Vencimento</th>
+                        <th>V/ref</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{farura().dados.data_emissao}}
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="direita">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th colspan="4">Observação</th>
+                    </tr>
+
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 2025-05-20</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tabela-b-conteiner">
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th><span class="negrito">Codigo</span></th>
+                    <th><span class="negrito">Descrição</span></th>
+                    <th><span class="negrito">Preço Unit</span></th>
+                    <th><span class="negrito">Qtd .taxaIVA %</span></th>
+                    <th><span class="negrito">Desc %</span></th>
+                    <th><span class="negrito">Total</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of farura().dados.itens; track $index) {
+                <tr>
+                    <td>{{item.codigo_conta}}</td>
+                    <td>{{item.descricao}}
+                    </td>
+                    <td>{{item.price_unit}}</td>
+                    <td>{{item.tem_iva}}</td>
+                    <td>{{item.discount}} <sup>M00</sup></td>
+                    <td>{{item.total}} KZ</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tabela-c-conteiner">
+        <div class="equerda">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th><span class="negrito">Imposto/IVA</span></th>
+                        <th><span class="negrito"> Incidência</span></th>
+                        <th><span class="negrito"> Valor</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of farura().outros_dados.taxa_incidencia; track $index) {
+                    <tr>
+                        <td>Isento (0%)</td>
+                        <td> {{item.incidencia}} Kz.
+                        </td>
+                        <td>{{item.taxa}}</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+            <table class="tabela margiana">
+                <thead class=" borda-reforcada">
+                    <tr>
+                        <th><span class="negrito">Regime de IVA</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> {{farura().outros_dados.empresa.regime_iva}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="tabela">
+                <thead class=" borda-reforcada">
+                    <tr>
+                        <th><span class="negrito ">Bens e Serviços</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Os bens/serviços foram colocados à disposição do adquirente na data e
+                            local do documento</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="tabela ">
+                <thead class=" borda-reforcada">
+                    <tr>
+                        <th><span class="negrito"> Dados Bancários</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="borda-inferior">
+                        <td> IBAN AO06 0040 0000 5206 4340 1016 1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="direita">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th> Sumário</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Total ilíquido:</td>
+                        <td class="texto-direita"> {{farura().outros_dados.total_sem_imposto}} Kz</td>
+                    </tr>
+                    <tr>
+                        <td> Desconto:</td>
+                        <td class="texto-direita"> {{calcularDesconto()}} Kz</td>
+                    </tr>
+                    <tr>
+                        <td> Sem Imposto/IVA/c Desc.:</td>
+                        <td class="texto-direita"> {{farura().outros_dados.total_sem_imposto}}kz</td>
+                    </tr>
+                    <tr>
+                        <td> Imposto/IVA:</td>
+                        <td class="texto-direita"> {{farura().outros_dados.total_imposto}} Kz</td>
+                    </tr>
+                    <tr>
+                        <td class="">Retenção: (6,50%)</td>
+                        <td class="texto-direita"> {{farura().outros_dados.retencao_fonte}}KZ</td>
+                    </tr>
+                    <tr class="borda">
+                        <td class=" padding-simples">Total</td>
+                        <td class="texto-direita"> {{farura().outros_dados.total_sem_imposto}}</td>
+                    </tr>
+                    <tr class="borda">
+                        <td class=" padding-simples">Total a pagar</td>
+                        <td class="texto-direita"> {{farura().outros_dados.total_sem_imposto - farura().outros_dados.retencao_fonte}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="pagina">
+        <p><span class="negrito">pL9c</span> - Processado por programa validado n.º 144/AGT/2019 | Factplus</p>
+        <p class="negrito"> 1 de 1</p>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="modalback">
+    <div class="tipofatura">
+        {{tipofatura()}}
+    </div>
+    <div class="modal-corpo">
+
+        <div class="folha">
+            <app-folha [IdDocs]="IdDocs()" />
+        </div>
+        <div class="container-btn">
+            <button class="btn-imprimir">Imprimir</button>
+            <button class="btn-fechar" (click)="fecharMoal()">Fechar</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="menu-container">
+    <h1 class="artigo-fatura">Selecione o tipo de fatura desejada</h1>
+    <div class="menu-grid">
+        <button class="menu-btn" (click)="FaturaNormal()">Factura (FT)</button>
+        <button class="menu-btn" (click)="FaturaRecibo()">Factura-Recibo (FR)</button>
+        <button class="menu-btn" (click)="Recibo()">Recibo (RC)</button>
+        <button class="menu-btn" (click)="FaturaProforma()">Proforma (PP)</button>
+        <button class="menu-btn" (click)="NotaCredito()">Nota de Crédito (NC)</button>
+        <button class="menu-btn" (click)="NotaDebito()">Nota de Débito (ND)</button>
+
+    </div>
+</div>
+@if(isMessage()){
+<app-message [tipofatura]="tipoFatura()" (onIsMessage)="isMessage.set($event)" [IdDocs]="idTipofatura()"/>
+}
